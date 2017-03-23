@@ -15,6 +15,25 @@ py_binary(
     deps = [":lib"],
 )
 
+py_runtime(
+    name = "py3",
+    interpreter = "/usr/local/google/home/yiyu/.pyenv/versions/3.6.0/bin/python",
+)
+
+py_runtime(
+    name = "py2",
+    interpreter = "/usr/local/google/home/yiyu/.pyenv/versions/2.7.11/bin/python",
+)
+
+py_runtime_suite(
+    name = "py_runtime_suite",
+    default = ":py2",
+    runtimes = {
+        "k8": ":py2",
+        "armeabi-v7a": ":py3",
+    },
+)
+
 filegroup(
     name = "srcs",
     srcs = ["BUILD"] + glob(["**/*.py"]),
