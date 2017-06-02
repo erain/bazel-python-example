@@ -1,7 +1,3 @@
-load("//:extension.bzl", "macro")
-
-macro(name = "myrule")
-
 py_library(
     name = "lib",
     srcs = ["lib.py"],
@@ -16,22 +12,15 @@ py_binary(
 )
 
 py_runtime(
-    name = "py3",
-    interpreter = "/usr/local/google/home/yiyu/.pyenv/versions/3.6.0/bin/python",
+    name = "python-2",
+    srcs = [],
+    python_path = "/usr/local/google/home/yiyu/.pyenv/versions/2.7.11/",
 )
 
 py_runtime(
-    name = "py2",
-    interpreter = "/usr/local/google/home/yiyu/.pyenv/versions/2.7.11/bin/python",
-)
-
-py_runtime_suite(
-    name = "py_runtime_suite",
-    default = ":py2",
-    runtimes = {
-        "k8": ":py2",
-        "armeabi-v7a": ":py3",
-    },
+    name = "python-3",
+    srcs = glob(["python-3/**"]),
+    python_path = "python-3",
 )
 
 filegroup(
