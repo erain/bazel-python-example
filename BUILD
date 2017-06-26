@@ -13,14 +13,14 @@ py_binary(
 
 py_runtime(
     name = "python-2",
-    srcs = [],
-    python_path = "/usr/local/google/home/yiyu/.pyenv/versions/2.7.11/",
+    files = [],
+    interpreter = "/usr/local/google/home/yiyu/.pyenv/versions/2.7.11/bin/python",
 )
 
 py_runtime(
     name = "python-3",
-    srcs = glob(["python-3/**"]),
-    python_path = "python-3",
+    files = glob(["python-3/**"]),
+    interpreter = "python-3/bin/python",
 )
 
 filegroup(
