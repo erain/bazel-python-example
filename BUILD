@@ -19,7 +19,9 @@ py_runtime(
 
 py_runtime(
     name = "python-3",
-    files = glob(["python-3/**"]),
+    files = glob(
+            ["python-3/**"],
+            exclude = ["**/* *"]),
     interpreter = "python-3/bin/python3",
 )
 
