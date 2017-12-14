@@ -14,7 +14,7 @@ py_binary(
 py_runtime(
     name = "python-2",
     files = [],
-    interpreter_path = "/usr/local/google/home/yiyu/.pyenv/versions/2.7.11/bin/python",
+    interpreter_path = "/home/yiyu/.pyenv/versions/2.7.11/bin/python",
 )
 
 py_runtime(

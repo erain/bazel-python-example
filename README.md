@@ -22,7 +22,7 @@ INFO: Running command line: bazel-bin/bin
 Use a python interpreter in an absolute path:
 
 ``` shell
-$ bazel run --python_path=/usr/local/google/home/yiyu/.pyenv/versions/2.7.12/bin/python :bin
+$ bazel run --python_path=/home/yiyu/.pyenv/versions/2.7.12/bin/python :bin
 INFO: Analysed target //:bin (0 packages loaded).
 INFO: Found 1 target...
 Target //:bin up-to-date:
